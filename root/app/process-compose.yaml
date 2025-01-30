@@ -1,0 +1,11 @@
+version: "0.5"
+
+processes:
+    crond:
+        description: "On crée le /cron/cronjob"
+        command: "/app/scripts/scripts/001-cronjob_start.sh"
+        log_location: /app/logs/crond.log
+    log:
+        description: "On relaye le log via tail"
+        command: "/app/scripts/scripts/002-tail_logs.sh"
+        log_location: /app/logs/log.log
